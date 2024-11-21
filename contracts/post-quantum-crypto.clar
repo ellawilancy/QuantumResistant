@@ -6,43 +6,24 @@
 ;; This is a mock implementation of a post-quantum cryptographic algorithm
 ;; In a real-world scenario, you would use a proven post-quantum algorithm
 
-(define-private (mock-pq-hash (input (buff 1024)))
-  (sha256 input)
+(define-read-only (pq-hash (input (buff 32)))
+  (ok (sha256 input))
 )
 
-(define-read-only (pq-hash (input (buff 1024)))
-  (ok (mock-pq-hash input))
+(define-read-only (pq-encrypt (input (buff 32)) (public-key (buff 32)))
+  (ok (sha256 (concat input public-key)))
 )
 
-(define-private (mock-pq-encrypt (input (buff 1024)) (public-key (buff 64)))
-  (xor input public-key)
+(define-read-only (pq-decrypt (ciphertext (buff 32)) (private-key (buff 32)))
+  ;; In a real implementation, this would perform actual decryption
+  ;; For this mock, we'll just return the ciphertext as is
+  (ok ciphertext)
 )
 
-(define-read-only (pq-encrypt (input (buff 1024)) (public-key (buff 64)))
-  (ok (mock-pq-encrypt input public-key))
+(define-read-only (pq-sign (message (buff 32)) (private-key (buff 32)))
+  (ok (sha256 (concat message private-key)))
 )
 
-(define-private (mock-pq-decrypt (ciphertext (buff 1024)) (private-key (buff 64)))
-  (xor ciphertext private-key)
+(define-read-only (pq-verify (message (buff 32)) (signature (buff 32)) (public-key (buff 32)))
+  (ok (is-eq signature (sha256 (concat message public-key))))
 )
-
-(define-read-only (pq-decrypt (ciphertext (buff 1024)) (private-key (buff 64)))
-  (ok (mock-pq-decrypt ciphertext private-key))
-)
-
-(define-private (mock-pq-sign (message (buff 1024)) (private-key (buff 64)))
-  (sha256 (concat message private-key))
-)
-
-(define-read-only (pq-sign (message (buff 1024)) (private-key (buff 64)))
-  (ok (mock-pq-sign message private-key))
-)
-
-(define-private (mock-pq-verify (message (buff 1024)) (signature (buff 32)) (public-key (buff 64)))
-  (is-eq signature (sha256 (concat message public-key)))
-)
-
-(define-read-only (pq-verify (message (buff 1024)) (signature (buff 32)) (public-key (buff 64)))
-  (ok (mock-pq-verify message signature public-key))
-)
-
