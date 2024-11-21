@@ -42,4 +42,3 @@ describe('post-quantum-crypto', () => {
     expect(signResult.value).toHaveLength(66) // '0x' + 32 bytes (256 bits) hex-encoded
   })
 })
-

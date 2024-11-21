@@ -13,3 +13,5 @@ U
 %contracts/quantum-secret-sharing.clar,b/f/bf5c82e499e26e8595d7ab4cfa4420ee3dd0b842
 T
 $tests/quantum-secret-sharing.test.ts,2/5/2568fdf77fcdf2be43ff67b0a537eccaa4a32b7b
+=
+tsconfig.json,6/1/61ebb9fd6e8cf9082658121d5d81e297791dacd0
