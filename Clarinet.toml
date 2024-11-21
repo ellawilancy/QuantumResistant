@@ -9,6 +9,11 @@ requirements = []
 path = 'contracts/post-quantum-crypto.clar'
 clarity_version = 2
 epoch = 2.5
+
+[contracts.quantum-secret-sharing]
+path = 'contracts/quantum-secret-sharing.clar'
+clarity_version = 2
+epoch = 2.5
 [repl.analysis]
 passes = ['check_checker']
 

@@ -54,4 +54,9 @@ plan:
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
             path: contracts/post-quantum-crypto.clar
             clarity-version: 2
+        - emulated-contract-publish:
+            contract-name: quantum-secret-sharing
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/quantum-secret-sharing.clar
+            clarity-version: 2
       epoch: "2.5"
