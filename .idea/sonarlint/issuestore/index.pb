@@ -11,3 +11,5 @@ Q
 package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 U
 %contracts/quantum-secret-sharing.clar,b/f/bf5c82e499e26e8595d7ab4cfa4420ee3dd0b842
+T
+$tests/quantum-secret-sharing.test.ts,2/5/2568fdf77fcdf2be43ff67b0a537eccaa4a32b7b
